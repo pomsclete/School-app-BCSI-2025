@@ -18,5 +18,15 @@ Bachelor CSI 2024-2025
 * [x] CRUD for horaire
 * [x] CRUD for Day
 * [x] Add and Manage Emploi temps
+## How to install app
+* [x] git clone https://github.com/pomsclete/School-app-BCSI-2025.git
+* [x] cd School-app-BCSI-2025
+* [x] composer install
+* [x] php artisan key:generate
+* [x] Create database in phpMyAdmin
+* [x] add database name in .env file
+* [x] php artisan migrate
+* [x] php artisan serve
+
 
 

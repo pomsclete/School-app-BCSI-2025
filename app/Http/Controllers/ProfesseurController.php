@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProfesseurController extends Controller
 {
+    // Afficher la liste des professeurs
     public function index(){
 
          $professeurs = Professeur::orderBy('nomComplet','asc')->paginate(2);
@@ -17,11 +18,12 @@ class ProfesseurController extends Controller
         ]);
     }
 
-
+// Affiche le formulaire pour ajouter un professeur
     public function create(){
         return view('professeur.create');
     }
 
+    //  Ajouter un professeur
     public function store(Request $request){
         
         $request->validate([
@@ -45,9 +47,18 @@ class ProfesseurController extends Controller
             
     }
 
+    /**
+    * Suppression
+    * @param  int  $professeur
+     */
     public function delete(Professeur $professeur){
           //$prof =  DB::table('professeurs')->where('id', $professeur)->first();
           $professeur->delete();
           return redirect()->route('professeur.index')->with('success', 'Professeur supprimé avec succès');
+    }
+
+    // Aficher les données à modifier
+    public function edit(){
+
     }
 }
