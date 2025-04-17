@@ -11,3 +11,12 @@
 
 Application for school management system.
 Bachelor CSI 2024-2025
+## Fonctionnalités
+* [x] CRUD for professeur
+* [x] CRUD for classe
+* [x] CRUD for module
+* [x] CRUD for horaire
+* [x] CRUD for Day
+* [x] Add and Manage Emploi temps
+
+
