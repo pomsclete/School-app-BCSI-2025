@@ -13,4 +13,5 @@ Route::get('/professeur',[ProfesseurController::class,'index'])->name('professeu
 Route::get('/professeur/create',[ProfesseurController::class,'create'])->name('professeur.create');
 Route::post('/professeur/store',[ProfesseurController::class,'store'])->name('professeur.store');
 Route::delete('/professeur/delete/{professeur}',[ProfesseurController::class,'delete'])->name('professeur.delete');
-Route::get('/professeur/edit',[ProfesseurController::class,'edit'])->name('professeur.edit');
+Route::get('/professeur/edit/{professeur}',[ProfesseurController::class,'edit'])->name('professeur.edit');
+Route::post('/professeur/update/{professeur}',[ProfesseurController::class,'update'])->name('professeur.update');

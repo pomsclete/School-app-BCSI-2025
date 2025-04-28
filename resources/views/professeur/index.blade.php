@@ -61,7 +61,8 @@
                                                 </span>
                                             </td>
                                             <td>
-                                                <a href="{{ route('') }}" class="btn btn-warning btn-sm">Modifier</a>
+                                                <a href="{{ route('professeur.edit', $professeur->id) }}"
+                                                    class="btn btn-warning btn-sm">Modifier</a>
 
                                                 <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
                                                     data-bs-target="#deleteModal{{ $professeur->id }}">

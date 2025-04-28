@@ -58,7 +58,23 @@ class ProfesseurController extends Controller
     }
 
     // Aficher les données à modifier
-    public function edit(){
+    public function edit(Professeur $professeur){
+        return view('professeur.edit',compact('professeur'));
+    }
 
+    // Modifier les données et enregistrer au niveau du BD
+    public function update(Request $request, Professeur $professeur){
+        $request->validate([
+            'nom_complet' =>'required|min:5|max:255',
+            'telephone' =>'required|numeric',
+            'matiere' =>'required'
+        ]);
+        $professeur->update([
+            'nomComplet' => $request->input('nom_complet'),
+            'telephone' => $request->input('telephone'),
+            'matiere' => $request->input('matiere')
+        ]);
+        
+        return redirect()->route('professeur.index')->with('success', 'Professeur modifié avec succès');
     }
 }
